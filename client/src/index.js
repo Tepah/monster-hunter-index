@@ -10,10 +10,25 @@ class Page extends React.Component {
     return (
       <div>
         <h1>{this.props.name}</h1>
+        <Head />
         <Monsterlist />
         <MonsterInfo />
       </div>
     );
+  }
+}
+
+
+class Head extends React.Component {
+  render() {
+    return (
+      <head>
+        <title>Monster Hunter Index</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
+integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" 
+crossorigin="anonymous"></link>
+      </head>
+    )
   }
 }
 
@@ -39,6 +54,10 @@ class MonsterInfo extends React.Component {
   render() {
     return (
       <div className="Monster-info">
+        <img className="Monster-logo" src="logo.svg" 
+        alt="The Monster's type" />
+        <img className="Monster-image" src="logo.svg" 
+        alt="The Monster in Question"/>
         <h2 className="Monster-name">Dracula</h2>
         <div className="Summary">This monster sucks blood for a living, 
         is allergic to garlic, and can't stand werewolves taking their girls.</div>
