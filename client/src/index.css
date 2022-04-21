@@ -5,9 +5,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("background.jpeg");
+  background-size: 1080px;
+  background-color: #222a37;
+}
+
+h1, h2, a, p, div {
+  color: #e6d7b6;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Title-area {
+  overflow: hidden;
+  background-color: #D8AE47;
+}
+
+.Title-area h1 {
+  padding: 10px 15px;
+  font-size: 20px;
+  color: #222a37;
+}
+

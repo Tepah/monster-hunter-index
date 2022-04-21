@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import logo from "./logo.svg";
 import App from "./App";
 
 
@@ -9,7 +10,9 @@ class Page extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.props.name}</h1>
+        <div className="Title-area">
+          <h1>{this.props.name}</h1>
+        </div>
         <Head />
         <Monsterlist />
         <MonsterInfo />
@@ -54,9 +57,9 @@ class MonsterInfo extends React.Component {
   render() {
     return (
       <div className="Monster-info">
-        <img className="Monster-logo" src="logo.svg" 
+        <img className="Monster-logo" src={logo}
         alt="The Monster's type" />
-        <img className="Monster-image" src="logo.svg" 
+        <img className="Monster-image" src={logo} 
         alt="The Monster in Question"/>
         <h2 className="Monster-name">Dracula</h2>
         <div className="Summary">This monster sucks blood for a living, 
