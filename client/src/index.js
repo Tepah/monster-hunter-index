@@ -9,13 +9,21 @@ import App from "./App";
 class Page extends React.Component {
   render() {
     return (
-      <div>
+      <div className="full-page">
         <div className="Title-area">
           <h1>{this.props.name}</h1>
         </div>
         <Head />
-        <Monsterlist />
-        <MonsterInfo />
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-3">
+              <Monsterlist />
+            </div>
+            <div class="col-lg-9">
+              <MonsterInfo />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -39,14 +47,43 @@ crossorigin="anonymous"></link>
 class Monsterlist extends React.Component {
   render() {
     return (
-      <div className="Monster-list">
-        <h2 className="List-title">Monsters</h2>
-        <div className="List">
-          <ul>
-            <li>(Monster Name 1)</li>
-            <li>(Monster Name 2)</li>
-            <li>(Monster Name 3)</li>
-          </ul>
+      <div className="Monster-list card">
+        <div class="card-body">
+          <h2 className="List-title card-title">Monsters</h2>
+          <div className="List">
+            <ul>
+              <li className="monster">(Monster Name 1)</li>
+              <li className="monster">(Monster Name 2)</li>
+              <li className="monster">(Monster Name 3)</li>
+              <li className="monster">(Monster Name 4)</li>
+              <li className="monster">(Monster Name 5)</li>
+              <li className="monster">(Monster Name 6)</li>
+              <li className="monster">(Monster Name 1)</li>
+              <li className="monster">(Monster Name 2)</li>
+              <li className="monster">(Monster Name 3)</li>
+              <li className="monster">(Monster Name 4)</li>
+              <li className="monster">(Monster Name 5)</li>
+              <li className="monster">(Monster Name 6)</li>
+              <li className="monster">(Monster Name 1)</li>
+              <li className="monster">(Monster Name 2)</li>
+              <li className="monster">(Monster Name 3)</li>
+              <li className="monster">(Monster Name 4)</li>
+              <li className="monster">(Monster Name 5)</li>
+              <li className="monster">(Monster Name 6)</li>
+              <li className="monster">(Monster Name 1)</li>
+              <li className="monster">(Monster Name 2)</li>
+              <li className="monster">(Monster Name 3)</li>
+              <li className="monster">(Monster Name 4)</li>
+              <li className="monster">(Monster Name 5)</li>
+              <li className="monster">(Monster Name 6)</li>
+              <li className="monster">(Monster Name 1)</li>
+              <li className="monster">(Monster Name 2)</li>
+              <li className="monster">(Monster Name 3)</li>
+              <li className="monster">(Monster Name 4)</li>
+              <li className="monster">(Monster Name 5)</li>
+              <li className="monster">(Monster Name 6)</li>
+            </ul>
+          </div>
         </div>
       </div>
     );
@@ -56,28 +93,30 @@ class Monsterlist extends React.Component {
 class MonsterInfo extends React.Component {
   render() {
     return (
-      <div className="Monster-info">
-        <img className="Monster-logo" src={logo}
-        alt="The Monster's type" />
-        <img className="Monster-image" src={logo} 
-        alt="The Monster in Question"/>
-        <h2 className="Monster-name">Dracula</h2>
-        <div className="Summary">This monster sucks blood for a living, 
-        is allergic to garlic, and can't stand werewolves taking their girls.</div>
-        <div>
-          <h3 className="Weakness">
-            <Weakness type="Fire" />
-            <Weakness type="Water" />
-            <Weakness type="Thunder" />
-            <Weakness type="Ice" />
-            <Weakness type="Dragon" />
-            <Weakness type="Poison" />
-            <Weakness type="Sleep" />
-            <Weakness type="Paralysis" />
-            <Weakness type="Explosive" />
-            <Weakness type="Stun" />
-            <Weakness type="Sharp" />
-          </h3>
+      <div class="card">
+        <div className="Monster-info card-body">
+          <img className="Monster-logo" src={logo}
+          alt="The Monster's type" />
+          <img className="Monster-image" src={logo} 
+          alt="The Monster in Question"/>
+          <h2 className="Monster-name card-title">Dracula</h2>
+          <div className="Summary">This monster sucks blood for a living, 
+          is allergic to garlic, and can't stand werewolves taking their girls.</div>
+          <div>
+            <h3 className="Weakness">
+              <Weakness type="Fire" />
+              <Weakness type="Water" />
+              <Weakness type="Thunder" />
+              <Weakness type="Ice" />
+              <Weakness type="Dragon" />
+              <Weakness type="Poison" />
+              <Weakness type="Sleep" />
+              <Weakness type="Paralysis" />
+              <Weakness type="Explosive" />
+              <Weakness type="Stun" />
+              <Weakness type="Sharp" />
+            </h3>
+          </div>
         </div>
       </div>
     );

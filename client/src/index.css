@@ -11,7 +11,7 @@ body {
 }
 
 h1, h2, a, p, div {
-  color: #e6d7b6;
+  color: #222a37;
 }
 
 code {
@@ -30,3 +30,48 @@ code {
   color: #222a37;
 }
 
+.Monster-list {
+  width: max-content;
+  position: relative;
+  padding: 15px;
+}
+
+.Monster-info {
+  align-content: right;
+  position: relative;
+  margin-top: 15px;
+}
+
+.Monster-logo {
+  width: 50px;
+  height: auto;
+}
+
+.Monster-image {
+  width: 300px;
+  height: auto;
+}
+
+.card {
+  margin-top: 20px;
+  background-color: #d8ae47 !important;
+  border-color: #006e51 !important;
+  border-width: thick;
+  box-shadow: #006e51;
+  height: 50em;
+}
+
+.Monster-list {
+  overflow: scroll !important;
+  max-height: 50em !important;
+  width: 16em;
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.monster {
+  padding: 6px 0px;
+}
