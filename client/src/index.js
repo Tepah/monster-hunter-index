@@ -19,7 +19,7 @@ class Page extends React.Component {
             <div class="col-sm-3">
               <Monsterlist />
             </div>
-            <div class="col-lg-9">
+            <div class="col-9">
               <MonsterInfo />
             </div>
           </div>
@@ -104,17 +104,47 @@ class MonsterInfo extends React.Component {
           is allergic to garlic, and can't stand werewolves taking their girls.</div>
           <div>
             <h3 className="Weakness">
-              <Weakness type="Fire" />
-              <Weakness type="Water" />
-              <Weakness type="Thunder" />
-              <Weakness type="Ice" />
-              <Weakness type="Dragon" />
-              <Weakness type="Poison" />
-              <Weakness type="Sleep" />
-              <Weakness type="Paralysis" />
-              <Weakness type="Explosive" />
-              <Weakness type="Stun" />
-              <Weakness type="Sharp" />
+              <div className="container">
+                <div className="row">
+                  <div className="col-sm-2">
+                    <Weakness type={require("./elements/fire.png")} />
+                  </div>
+                  <div className="col-sm-2">
+                    <Weakness type={require("./elements/water.pn")} />
+                  </div>
+                  <div className="col-sm-2">
+                    <Weakness type={require("./elements/thunder.png")} />
+                  </div>
+                  <div className="col-sm-2">
+                    <Weakness type={require("./elements/ice.png")} />
+                  </div>
+                  <div className="col-sm-2">
+                    <Weakness type={require("./elements/dragon.png")} />
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-sm-2">
+                    <Weakness type={require("./elements/poison.png")} />
+                  </div>
+                  <div className="col-sm-2">
+                    <Weakness type={require("./elements/sleep.png")} />
+                  </div>
+                  <div className="col-sm-2">
+                    <Weakness type={require("./elements/paralysis.png")} />
+                  </div>
+                  <div className="col-sm-2">
+                    <Weakness type={require("./elements/explosive.png")} />
+                  </div>
+                  <div className="col-sm-2">
+                    <Weakness type={require("./elements/stun.png")} />
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-sm-10">
+                    <Weakness type={require("./elements/sharp.png")} />
+                  </div>
+                </div>
+              </div>
             </h3>
           </div>
         </div>
@@ -126,9 +156,16 @@ class MonsterInfo extends React.Component {
 class Weakness extends React.Component {
   render() {
     return (
-      <div className="Weakness-box">3</div>
+      <div className="Weakness-box">
+        <Element type={this.props.type} />
+        3
+      </div>
     );
   }
+}
+
+function Element(props) {
+    return <img className="element" src={props.type} alt="elem" />;
 }
 
 ReactDOM.render(
