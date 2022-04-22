@@ -37,6 +37,7 @@ code {
 }
 
 .Monster-info {
+  overflow: scroll !important;
   align-content: right;
   position: relative;
   margin-top: 15px;
@@ -45,8 +46,7 @@ code {
 .Monster-logo {
   width: 75px;
   height: auto;
-  margin-bottom: 170px;
-  position: fixed;
+  position: absolute;
 }
 
 .Monster-image {
@@ -79,6 +79,15 @@ ul {
 
 .monster {
   padding: 6px 0px;
+  margin: 3px;
+  border-width: thick;
+  background-color: white;
+  text-align: center;
+  border-radius: 7px;
+}
+
+.Weakness {
+  margin-top: 80px;
 }
 
 .Weakness-box {

@@ -106,41 +106,41 @@ class MonsterInfo extends React.Component {
             <h3 className="Weakness">
               <div className="container">
                 <div className="row">
-                  <div className="col-sm-2">
+                  <div className="col-lg-2">
                     <Weakness type={require("./elements/fire.png")} />
                   </div>
-                  <div className="col-sm-2">
-                    <Weakness type={require("./elements/water.pn")} />
+                  <div className="col-lg-2">
+                    <Weakness type={require("./elements/water.png")} />
                   </div>
-                  <div className="col-sm-2">
+                  <div className="col-lg-2">
                     <Weakness type={require("./elements/thunder.png")} />
                   </div>
-                  <div className="col-sm-2">
+                  <div className="col-lg-2">
                     <Weakness type={require("./elements/ice.png")} />
                   </div>
-                  <div className="col-sm-2">
+                  <div className="col-lg-2">
                     <Weakness type={require("./elements/dragon.png")} />
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-sm-2">
+                  <div className="col-lg-2">
                     <Weakness type={require("./elements/poison.png")} />
                   </div>
-                  <div className="col-sm-2">
+                  <div className="col-lg-2">
                     <Weakness type={require("./elements/sleep.png")} />
                   </div>
-                  <div className="col-sm-2">
+                  <div className="col-lg-2">
                     <Weakness type={require("./elements/paralysis.png")} />
                   </div>
-                  <div className="col-sm-2">
+                  <div className="col-lg-2">
                     <Weakness type={require("./elements/explosive.png")} />
                   </div>
-                  <div className="col-sm-2">
+                  <div className="col-lg-2">
                     <Weakness type={require("./elements/stun.png")} />
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-sm-10">
+                  <div className="col-lg-10">
                     <Weakness type={require("./elements/sharp.png")} />
                   </div>
                 </div>
