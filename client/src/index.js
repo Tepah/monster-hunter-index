@@ -52,36 +52,18 @@ class Monsterlist extends React.Component {
           <h2 className="List-title card-title">Monsters</h2>
           <div className="List">
             <ul>
-              <li className="monster">(Monster Name 1)</li>
-              <li className="monster">(Monster Name 2)</li>
-              <li className="monster">(Monster Name 3)</li>
-              <li className="monster">(Monster Name 4)</li>
-              <li className="monster">(Monster Name 5)</li>
-              <li className="monster">(Monster Name 6)</li>
-              <li className="monster">(Monster Name 1)</li>
-              <li className="monster">(Monster Name 2)</li>
-              <li className="monster">(Monster Name 3)</li>
-              <li className="monster">(Monster Name 4)</li>
-              <li className="monster">(Monster Name 5)</li>
-              <li className="monster">(Monster Name 6)</li>
-              <li className="monster">(Monster Name 1)</li>
-              <li className="monster">(Monster Name 2)</li>
-              <li className="monster">(Monster Name 3)</li>
-              <li className="monster">(Monster Name 4)</li>
-              <li className="monster">(Monster Name 5)</li>
-              <li className="monster">(Monster Name 6)</li>
-              <li className="monster">(Monster Name 1)</li>
-              <li className="monster">(Monster Name 2)</li>
-              <li className="monster">(Monster Name 3)</li>
-              <li className="monster">(Monster Name 4)</li>
-              <li className="monster">(Monster Name 5)</li>
-              <li className="monster">(Monster Name 6)</li>
-              <li className="monster">(Monster Name 1)</li>
-              <li className="monster">(Monster Name 2)</li>
-              <li className="monster">(Monster Name 3)</li>
-              <li className="monster">(Monster Name 4)</li>
-              <li className="monster">(Monster Name 5)</li>
-              <li className="monster">(Monster Name 6)</li>
+              <li className="monster">
+                <img className="list-icon" src={logo} />
+                (Monster Name 1)
+              </li>
+              <li className="monster">
+                <img className="list-icon" src={logo} />
+                (Monster Name 2)
+              </li>
+              <li className="monster">
+                <img className="list-icon" src={logo} />
+                (Monster Name 3)
+              </li>
             </ul>
           </div>
         </div>
@@ -100,6 +82,13 @@ class MonsterInfo extends React.Component {
           <img className="Monster-image" src={logo} 
           alt="The Monster in Question"/>
           <h2 className="Monster-name card-title">Dracula</h2>
+          <div className="monster-type">Monster Type: fiction</div>
+          <div className="games-included">
+            Featured in: 
+            <ul className="Gamelist">
+              <li>Pokemon</li>
+            </ul>
+          </div>
           <div className="Summary">This monster sucks blood for a living, 
           is allergic to garlic, and can't stand werewolves taking their girls.</div>
           <div>
