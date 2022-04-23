@@ -84,6 +84,17 @@ function Monster(props) {
 }
 
 class MonsterInfo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      monster: "Dracula",
+      type: "Fiction",
+      games: ["Pokemon", "Naruto", "Demon Salver"],
+      summary: "This monster sucks blood for a living, is allergic to garlic, and can't stand werewolves taking their girls.",
+      weakness: ["3", "2", "1", "2", "0", "1", "3", "2", "0", "2", "O"]
+    }
+  }
+
   render() {
     return (
       <div class="card">
@@ -92,56 +103,55 @@ class MonsterInfo extends React.Component {
           alt="The Monster's type" />
           <img className="Monster-image" src={logo} 
           alt="The Monster in Question"/>
-          <h2 className="Monster-name card-title">Dracula</h2>
-          <div className="monster-type">Monster Type: fiction</div>
+          <h2 className="Monster-name card-title">{this.state.monster}</h2>
+          <div className="monster-type">Monster Type: {this.state.type}</div>
           <div className="games-included">
             Featured in: 
             <ul className="Gamelist">
               <li>Pokemon</li>
             </ul>
           </div>
-          <div className="Summary">This monster sucks blood for a living, 
-          is allergic to garlic, and can't stand werewolves taking their girls.</div>
+          <div className="Summary">{this.state.summary}</div>
           <div>
             <h3 className="Weakness">
               <div className="container">
                 <div className="row">
                   <div className="col-lg-2">
-                    <Weakness type={require("./elements/fire.png")} />
+                    <Weakness value={this.state.weakness[0]} type={require("./elements/fire.png")} />
                   </div>
                   <div className="col-lg-2">
-                    <Weakness type={require("./elements/water.png")} />
+                    <Weakness value={this.state.weakness[1]} type={require("./elements/water.png")} />
                   </div>
                   <div className="col-lg-2">
-                    <Weakness type={require("./elements/thunder.png")} />
+                    <Weakness value={this.state.weakness[2]} type={require("./elements/thunder.png")} />
                   </div>
                   <div className="col-lg-2">
-                    <Weakness type={require("./elements/ice.png")} />
+                    <Weakness value={this.state.weakness[3]} type={require("./elements/ice.png")} />
                   </div>
                   <div className="col-lg-2">
-                    <Weakness type={require("./elements/dragon.png")} />
+                    <Weakness value={this.state.weakness[4]} type={require("./elements/dragon.png")} />
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-lg-2">
-                    <Weakness type={require("./elements/poison.png")} />
+                    <Weakness value={this.state.weakness[5]} type={require("./elements/poison.png")} />
                   </div>
                   <div className="col-lg-2">
-                    <Weakness type={require("./elements/sleep.png")} />
+                    <Weakness value={this.state.weakness[6]} type={require("./elements/sleep.png")} />
                   </div>
                   <div className="col-lg-2">
-                    <Weakness type={require("./elements/paralysis.png")} />
+                    <Weakness value={this.state.weakness[7]} type={require("./elements/paralysis.png")} />
                   </div>
                   <div className="col-lg-2">
-                    <Weakness type={require("./elements/explosive.png")} />
+                    <Weakness value={this.state.weakness[8]} type={require("./elements/explosive.png")} />
                   </div>
                   <div className="col-lg-2">
-                    <Weakness type={require("./elements/stun.png")} />
+                    <Weakness value={this.state.weakness[9]} type={require("./elements/stun.png")} />
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-lg-10">
-                    <Weakness type={require("./elements/sharp.png")} />
+                    <Weakness value={this.state.weakness[10]} type={require("./elements/sharp.png")} />
                   </div>
                 </div>
               </div>
@@ -158,7 +168,7 @@ class Weakness extends React.Component {
     return (
       <div className="Weakness-box">
         <Element type={this.props.type} />
-        3
+        {this.props.value}
       </div>
     );
   }
