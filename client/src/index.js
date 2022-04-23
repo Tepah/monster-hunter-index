@@ -45,6 +45,13 @@ crossorigin="anonymous"></link>
 
 
 class Monsterlist extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: ["Monster 1", "Monster 2", "Monster 3"]
+    };
+  }
+
   render() {
     return (
       <div className="Monster-list card">
@@ -52,24 +59,28 @@ class Monsterlist extends React.Component {
           <h2 className="List-title card-title">Monsters</h2>
           <div className="List">
             <ul>
-              <li className="monster">
-                <img className="list-icon" src={logo} />
-                (Monster Name 1)
-              </li>
-              <li className="monster">
-                <img className="list-icon" src={logo} />
-                (Monster Name 2)
-              </li>
-              <li className="monster">
-                <img className="list-icon" src={logo} />
-                (Monster Name 3)
-              </li>
+              <Monster name={this.state.list} />
             </ul>
           </div>
         </div>
       </div>
     );
   }
+}
+
+
+function Monster(props) {
+  var monsterList = [];
+  for (var i = 0; i < props.name.length; i++)
+  {
+    monsterList.push(
+      <li className="monster">
+        <img className="list-icon" src={logo} />
+        {props.name[i]}
+      </li>
+    )
+  }
+  return monsterList;
 }
 
 class MonsterInfo extends React.Component {

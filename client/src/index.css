@@ -106,3 +106,8 @@ ul {
   height: auto;
   align-content: center;
 }
+
+.list-icon {
+  width: 30px;
+  height: auto;
+}
