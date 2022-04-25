@@ -1,12 +1,11 @@
 const express = require('express');
-const res = require('express/lib/response');
 const router = express.Router();
 
 // Load Monster Model
-const Monster = require('../../models/Book');
+const Monster = require('../../models/Monster');
 
 // @route GET api/monsters/test
-// @description tests books route
+// @description tests monsters route
 // @access Public
 router.get('/test', (req, res) => res.send('Monster route test'));
 
@@ -16,14 +15,16 @@ router.get('/test', (req, res) => res.send('Monster route test'));
 router.get('/', (req, res) => {
     Monster.find()
         .then(monsters => res.json(monsters))
-        .catch(err => res.status(404).json({ nomonstersfound: "No Monsters found" }));
+        .catch(err => res.status(404).json({ nomonsterfound: "No Monsters found" }));
 });
 
 // @route GET api/monsters/:id
 // @description Get single monster by id
 // @access Public
 router.get('/:id', (req, res) => {
-    Book.findById(req.params.id)
+    Monster.findById(req.params.id)
         .then(monster => res.json(monster))
-        .catch(err => res.status(404).json({ nobookfound: 'No Book found' }));
+        .catch(err => res.status(404).json({ nomonsterfound: 'No Monsters found' }));
 });
+
+module.exports = router;
