@@ -7,7 +7,7 @@ const connectDB = async () => {
         await mongoose.connect(
             db,
             {
-                userNewUrlParser: true
+                useNewUrlParser: true
             }
         );
 
