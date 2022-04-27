@@ -8,21 +8,8 @@ export class MonsterInfo extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    axios
-      .get('http://localhost:8082/api/monsters/'+this.props.match.params.name)
-      .then(res => {
-        this.setState({
-          monster: res.data
-        })
-      })
-      .catch(err => {
-        console.log("Error from MonsterInfo");
-      })
-  };
-
   render() {
-    const monster = this.state.monster;
+    const monster = this.props.monster
 
     return (
       <div class="card">

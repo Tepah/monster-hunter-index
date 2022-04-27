@@ -8,32 +8,28 @@ export class MonsterConnect extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            monsters: {}
+            monsters: {
+                "rathian": {
+                    "name": "Rathian",
+                    "summary": "a drag",
+                    "type": "wyvern",
+                    "weakness": ["1", "2", "3", "1", "2", "3", "1", "2", "3", "1"]
+                },
+            }
         };
     }
 
-    componentDidMount() {
-        axios
-          .get('http://localhost:8082/api/monsters')
-          .then(res => {
-            this.setState({
-              monsters: res.data
-            })
-          })
-          .catch(err =>{
-            console.log("Error from MonsterList");
-          })
-      };
 
     render() {
+        let monsters = this.state.monsters;
         return (
             <div class="container">
           <div class="row">
             <div class="col-sm-3">
-              <Monsterlist />
+              <Monsterlist monsters={Object.keys(monsters)} />
             </div>
             <div class="col-9">
-              <MonsterInfo />
+              <MonsterInfo monsters={ monsters } monster={ monsters.rathian } />
             </div>
           </div>
         </div>

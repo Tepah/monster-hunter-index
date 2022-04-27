@@ -13,9 +13,7 @@ export class Monsterlist extends React.Component {
     const monsters = this.props.monsters;
     console.log("PrintMonster: " + monsters);
     let monsterList;
-    monsterList = monsters.map((monster, k) =>
-      <Monster monster={monster} key={k} />
-    );
+    monsterList = <Monster monsters={monsters} />;
 
     return (
       <div className="Monster-list card">
@@ -34,11 +32,11 @@ export class Monsterlist extends React.Component {
 
 function Monster(props) {
   var monsterList = [];
-  for (var i = 0; i < props.name.length; i++) {
+  for (var i = 0; i < props.monsters.length; i++) {
     monsterList.push(
       <li className="monster">
         <img className="list-icon" src={logo} />
-        {props.name[i]}
+        {props.monsters[i]}
       </li>
     );
   }
