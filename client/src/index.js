@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { Monsterlist } from "./components/Monsterlist";
-import { MonsterInfo } from "./components/MonsterInfo";
+import { MonsterConnect } from "./components/MonsterConnect";
 
 
 // Where the whole page renders
@@ -15,16 +14,7 @@ class Page extends React.Component {
           <h1>{this.props.name}</h1>
         </div>
         <Head />
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-3">
-              <Monsterlist />
-            </div>
-            <div class="col-9">
-              <MonsterInfo />
-            </div>
-          </div>
-        </div>
+        <MonsterConnect />
       </div>
     );
   }

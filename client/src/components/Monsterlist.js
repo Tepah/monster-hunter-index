@@ -7,27 +7,10 @@ import { Link } from 'react-router-dom';
 export class Monsterlist extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      monsters: []
-    };
   }
 
-
-  componentDidMount() {
-    axios
-      .get('http://localhost:8082/api/monsters')
-      .then(res => {
-        this.setState({
-          monsters: res.data
-        })
-      })
-      .catch(err =>{
-        console.log("Error from MonsterList");
-      })
-  };
-
   render() {
-    const monsters = this.state.monsters;
+    const monsters = this.props.monsters;
     console.log("PrintMonster: " + monsters);
     let monsterList;
     monsterList = monsters.map((monster, k) =>
