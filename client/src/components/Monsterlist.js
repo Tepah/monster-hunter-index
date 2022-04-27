@@ -1,7 +1,5 @@
 import React from "react";
 import logo from "../logo.svg";
-import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 
 export class Monsterlist extends React.Component {
@@ -17,7 +15,7 @@ export class Monsterlist extends React.Component {
 
     return (
       <div className="Monster-list card">
-        <div class="card-body">
+        <div className="card-body">
           <h2 className="List-title card-title">Monsters</h2>
           <div className="List">
             <ul>

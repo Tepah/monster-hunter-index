@@ -12,7 +12,7 @@ const MonsterSchema = new mongoose.Schema({
     games: {
         type: Array,
     },
-    description: {
+    summary: {
         type: String
     },
     weakness: {

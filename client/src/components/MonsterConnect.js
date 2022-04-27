@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "../logo.svg";
 import axios from 'axios';
 import { MonsterInfo } from "./MonsterInfo";
 import { Monsterlist } from "./Monsterlist";
@@ -13,13 +12,14 @@ export class MonsterConnect extends React.Component {
     };
     
 
-    componentDidMount() {
+    async componentDidMount() {
         axios
             .get('http://localhost:8082/api/monsters')
             .then(res => {
                 this.setState({
                     monsters: res.data
                 })
+                console.log("complete!");
             })
             .catch(err =>{
                 console.log("Error from MonsterConnect");
@@ -28,38 +28,17 @@ export class MonsterConnect extends React.Component {
 
 
     render() {
-        const list = ["1", "2"]
-        const monsters = {
-            "rathian": {
-                "name": "Rathian",
-                "type": "Wyvern",
-                "summary": "\"A big dragon\"",
-                "games": [
-                    "Monster Hunter World"
-                ],
-                "weakness": [
-                    "0",
-                    "2",
-                    "3",
-                    "1",
-                    "2",
-                    "3",
-                    "0",
-                    "2",
-                    "1",
-                    "0",
-                    "O"
-                ]
-            }
-        }
+        var monsters_data = this.state.monsters;
+        var monster_list_show = <Monsterlist monsters={Object.keys(monsters_data[0])} />
+        var show_monster = <MonsterInfo monsters={ monsters_data[0]["rathian"] } monster={ monsters_data[0]["monsters"]["rathian"] } />
         return (
             <div class="container">
           <div class="row">
             <div class="col-sm-3">
-              <Monsterlist monsters={list} />
+              {monster_list_show}
             </div>
             <div class="col-9">
-              <MonsterInfo monsters={ monsters } monster={ monsters["rathian"] } />
+              {show_monster}
             </div>
           </div>
         </div>

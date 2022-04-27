@@ -1,7 +1,5 @@
 import React from "react";
 import logo from "../logo.svg";
-import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 export class MonsterInfo extends React.Component {
   constructor(props) {
