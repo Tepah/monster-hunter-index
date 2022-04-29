@@ -3,7 +3,13 @@ import axios from 'axios';
 import { MonsterInfo } from "./MonsterInfo";
 import { Monsterlist } from "./Monsterlist";
 
+
 export class MonsterConnect extends React.Component {
+    async getData() {
+        const res = await axios('http://localhost:8082/api/monsters');
+        return await res.data[0];
+    }
+
     constructor (props) {
         super(props);
         this.state = {
@@ -13,37 +19,38 @@ export class MonsterConnect extends React.Component {
     
 
     componentDidMount() {
-        console.log("Component mounting...");
-        axios
-            .get('http://localhost:8082/api/monsters')
-            .then(res => {
-                this.setState({
-                    monsters: res.data[0]
-                });
-                console.log(res.data);
-                console.log(this.state.monsters);
-            })
-            .catch(err =>{
-                console.log("Error from MonsterConnect");
-            })
+        this.getMonsters();
     }
 
+    getMonsters = () => {
+        axios 
+            .get('http://localhost:8082/api/monsters')
+            .then(data => this.setState({ monsters: data.data[0]}))
+            .catch(err => {
+                console.log(err);
+                return null;
+            })
+    };
 
     render() {
         var monsters_data = this.state.monsters;
-        var monster_list_show = <Monsterlist monsters={Object.keys(monsters_data)} />
-        var show_monster = <MonsterInfo monsters={ monsters_data["rathian"] } monster={ monsters_data["rathian"] } />
         return (
             <div className="container">
-          <div className="row">
-            <div className="col-sm-3">
-              {monster_list_show}
+                
+                {Object.keys(monsters_data).length === 0 ? (
+                    <div>Loading...</div>
+                ) : (
+                    <div className="row">
+                        <div className="col-sm-3">
+                        <Monsterlist monsters={Object.keys(monsters_data)} />
+                        </div>
+                        <div className="col-9">
+                        <MonsterInfo monster={ monsters_data["rathian"] } />
+                        </div>
+                    </div>
+                )}
+                
             </div>
-            <div className="col-9">
-              {show_monster}
-            </div>
-          </div>
-        </div>
         )
     };
 

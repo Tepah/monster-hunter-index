@@ -93,10 +93,10 @@ function Element(props) {
 
 function GameListGen(list) {
   var gameList = [];
-  for (var i = 0; i < list; i++) {
+  for (var i = 0; i < list.length; i++) {
     gameList.push(
       <li>
-        list[i]
+        {list[i]}
       </li>
     );
   }
