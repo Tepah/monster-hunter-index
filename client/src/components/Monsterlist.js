@@ -31,12 +31,15 @@ export class Monsterlist extends React.Component {
 function Monster(props) {
   var monsterList = [];
   for (var i = 0; i < props.monsters.length; i++) {
-    monsterList.push(
-      <li className="monster">
-        <img className="list-icon" src={logo} />
-        {props.monsters[i]}
-      </li>
-    );
+    if (props.monsters[i] !== "games" && props.monsters[i] !== "weakness"
+    && props.monsters[i] !== "_id" ) {
+      monsterList.push(
+        <li className="monster">
+          <img className="list-icon" src={logo} />
+          {props.monsters[i].charAt(0).toUpperCase() + props.monsters[i].slice(1)}
+        </li>
+      );
+    };
   }
   return monsterList;
 }
