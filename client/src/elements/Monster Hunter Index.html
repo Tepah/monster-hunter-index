@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+
+    <!-- bootstrap css cdn -->
+    <link rel="stylesheet" href="./Monster Hunter Index_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="./Monster Hunter Index_files/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <title>Monster Hunter Index</title>
+  <script defer="" src="./Monster Hunter Index_files/bundle.js"></script><style>body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url(http://localhost:3000/static/media/background.a1dedf8d4c631f89a9c1.jpeg);
+  background-size: 1080px;
+  background-color: #222a37;
+}
+
+h1, h2, a, p, div {
+  color: #222a37;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.Title-area {
+  overflow: hidden;
+  background-color: #D8AE47;
+}
+
+.Title-area h1 {
+  padding: 10px 15px;
+  font-size: 20px;
+  color: #222a37;
+}
+
+.Monster-list {
+  width: max-content;
+  position: relative;
+  padding: 15px;
+}
+
+.Monster-info {
+  overflow: scroll !important;
+  align-content: right;
+  position: relative;
+  margin-top: 15px;
+}
+
+.Monster-logo {
+  width: 75px;
+  height: auto;
+  position: absolute;
+}
+
+.Monster-image {
+  width: 300px;
+  height: auto;
+  position: relative;
+  margin-right: 20em;
+  margin-top: 3em;
+}
+
+.card {
+  margin-top: 20px;
+  background-color: #d8ae47 !important;
+  border-color: #006e51 !important;
+  border-width: thick;
+  box-shadow: #006e51;
+  height: 50em;
+}
+
+.Monster-list {
+  overflow: scroll !important;
+  max-height: 50em !important;
+  width: 16em;
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.monster {
+  padding: 6px 0px;
+  margin: 3px;
+  border-width: thick;
+  background-color: white;
+  text-align: center;
+  border-radius: 7px;
+}
+
+.Weakness {
+  padding-top: 4em;
+  padding-left: 4em;
+}
+
+.Weakness-box {
+  margin: 3px;
+  padding: 7px;
+  border-width: thick;
+  background-color: white;
+  text-align: center;
+  border-color: #006e51;
+  border-radius: 7px;
+}
+
+.element {
+  width: 50px;
+  height: auto;
+  align-content: center;
+}
+
+.list-icon {
+  width: 30px;
+  height: auto;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9pbmRleC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxTQUFTO0VBQ1Q7O2NBRVk7RUFDWixtQ0FBbUM7RUFDbkMsa0NBQWtDO0VBQ2xDLHlEQUF3QztFQUN4Qyx1QkFBdUI7RUFDdkIseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UsY0FBYztBQUNoQjs7QUFFQTtFQUNFO2FBQ1c7QUFDYjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQix5QkFBeUI7QUFDM0I7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsZUFBZTtFQUNmLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsa0JBQWtCO0VBQ2xCLGFBQWE7QUFDZjs7QUFFQTtFQUNFLDJCQUEyQjtFQUMzQixvQkFBb0I7RUFDcEIsa0JBQWtCO0VBQ2xCLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsWUFBWTtFQUNaLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsa0JBQWtCO0VBQ2xCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsb0NBQW9DO0VBQ3BDLGdDQUFnQztFQUNoQyxtQkFBbUI7RUFDbkIsbUJBQW1CO0VBQ25CLFlBQVk7QUFDZDs7QUFFQTtFQUNFLDJCQUEyQjtFQUMzQiwyQkFBMkI7RUFDM0IsV0FBVztBQUNiOztBQUVBO0VBQ0UsZUFBZTtFQUNmLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixXQUFXO0VBQ1gsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2QixrQkFBa0I7RUFDbEIsa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1osbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2QixrQkFBa0I7RUFDbEIscUJBQXFCO0VBQ3JCLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0VBQ1oscUJBQXFCO0FBQ3ZCOztBQUVBO0VBQ0UsV0FBVztFQUNYLFlBQVk7QUFDZCIsInNvdXJjZXNDb250ZW50IjpbImJvZHkge1xuICBtYXJnaW46IDA7XG4gIGZvbnQtZmFtaWx5OiAtYXBwbGUtc3lzdGVtLCBCbGlua01hY1N5c3RlbUZvbnQsICdTZWdvZSBVSScsICdSb2JvdG8nLCAnT3h5Z2VuJyxcbiAgICAnVWJ1bnR1JywgJ0NhbnRhcmVsbCcsICdGaXJhIFNhbnMnLCAnRHJvaWQgU2FucycsICdIZWx2ZXRpY2EgTmV1ZScsXG4gICAgc2Fucy1zZXJpZjtcbiAgLXdlYmtpdC1mb250LXNtb290aGluZzogYW50aWFsaWFzZWQ7XG4gIC1tb3otb3N4LWZvbnQtc21vb3RoaW5nOiBncmF5c2NhbGU7XG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybChcImJhY2tncm91bmQuanBlZ1wiKTtcbiAgYmFja2dyb3VuZC1zaXplOiAxMDgwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICMyMjJhMzc7XG59XG5cbmgxLCBoMiwgYSwgcCwgZGl2IHtcbiAgY29sb3I6ICMyMjJhMzc7XG59XG5cbmNvZGUge1xuICBmb250LWZhbWlseTogc291cmNlLWNvZGUtcHJvLCBNZW5sbywgTW9uYWNvLCBDb25zb2xhcywgJ0NvdXJpZXIgTmV3JyxcbiAgICBtb25vc3BhY2U7XG59XG5cbi5UaXRsZS1hcmVhIHtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgYmFja2dyb3VuZC1jb2xvcjogI0Q4QUU0Nztcbn1cblxuLlRpdGxlLWFyZWEgaDEge1xuICBwYWRkaW5nOiAxMHB4IDE1cHg7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgY29sb3I6ICMyMjJhMzc7XG59XG5cbi5Nb25zdGVyLWxpc3Qge1xuICB3aWR0aDogbWF4LWNvbnRlbnQ7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgcGFkZGluZzogMTVweDtcbn1cblxuLk1vbnN0ZXItaW5mbyB7XG4gIG92ZXJmbG93OiBzY3JvbGwgIWltcG9ydGFudDtcbiAgYWxpZ24tY29udGVudDogcmlnaHQ7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgbWFyZ2luLXRvcDogMTVweDtcbn1cblxuLk1vbnN0ZXItbG9nbyB7XG4gIHdpZHRoOiA3NXB4O1xuICBoZWlnaHQ6IGF1dG87XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbn1cblxuLk1vbnN0ZXItaW1hZ2Uge1xuICB3aWR0aDogMzAwcHg7XG4gIGhlaWdodDogYXV0bztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBtYXJnaW4tcmlnaHQ6IDIwZW07XG4gIG1hcmdpbi10b3A6IDNlbTtcbn1cblxuLmNhcmQge1xuICBtYXJnaW4tdG9wOiAyMHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZDhhZTQ3ICFpbXBvcnRhbnQ7XG4gIGJvcmRlci1jb2xvcjogIzAwNmU1MSAhaW1wb3J0YW50O1xuICBib3JkZXItd2lkdGg6IHRoaWNrO1xuICBib3gtc2hhZG93OiAjMDA2ZTUxO1xuICBoZWlnaHQ6IDUwZW07XG59XG5cbi5Nb25zdGVyLWxpc3Qge1xuICBvdmVyZmxvdzogc2Nyb2xsICFpbXBvcnRhbnQ7XG4gIG1heC1oZWlnaHQ6IDUwZW0gIWltcG9ydGFudDtcbiAgd2lkdGg6IDE2ZW07XG59XG5cbnVsIHtcbiAgcGFkZGluZy1sZWZ0OiAwO1xuICBsaXN0LXN0eWxlLXR5cGU6IG5vbmU7XG59XG5cbi5tb25zdGVyIHtcbiAgcGFkZGluZzogNnB4IDBweDtcbiAgbWFyZ2luOiAzcHg7XG4gIGJvcmRlci13aWR0aDogdGhpY2s7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGJvcmRlci1yYWRpdXM6IDdweDtcbn1cblxuLldlYWtuZXNzIHtcbiAgcGFkZGluZy10b3A6IDRlbTtcbiAgcGFkZGluZy1sZWZ0OiA0ZW07XG59XG5cbi5XZWFrbmVzcy1ib3gge1xuICBtYXJnaW46IDNweDtcbiAgcGFkZGluZzogN3B4O1xuICBib3JkZXItd2lkdGg6IHRoaWNrO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBib3JkZXItY29sb3I6ICMwMDZlNTE7XG4gIGJvcmRlci1yYWRpdXM6IDdweDtcbn1cblxuLmVsZW1lbnQge1xuICB3aWR0aDogNTBweDtcbiAgaGVpZ2h0OiBhdXRvO1xuICBhbGlnbi1jb250ZW50OiBjZW50ZXI7XG59XG5cbi5saXN0LWljb24ge1xuICB3aWR0aDogMzBweDtcbiAgaGVpZ2h0OiBhdXRvO1xufSJdLCJzb3VyY2VSb290IjoiIn0= */</style><script>
+        window.addEventListener("message", async (event) => {
+          if (event.data && event.data.sender === "sabre") {
+            dijit.byId(event.data.target).set("value", event.data.value);
+          }
+        });
+        </script></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+    <!-- bootstrap JS cdn -->
+    <script src="./Monster Hunter Index_files/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="./Monster Hunter Index_files/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="./Monster Hunter Index_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  
+
+</body></html>

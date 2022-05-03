@@ -35,7 +35,7 @@ function Monster(props) {
     && props.monsters[i] !== "_id" ) {
       monsterList.push(
         <li className="monster">
-          <img className="list-icon" src="./pictures/icons/{rathian}" />
+          <img className="list-icon" src={"../pictures/icons/" + props.monsters[i] + ".png" }/>
           {props.monsters[i].charAt(0).toUpperCase() + props.monsters[i].slice(1)}
         </li>
       );
