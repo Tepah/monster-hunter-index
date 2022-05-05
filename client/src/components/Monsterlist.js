@@ -1,6 +1,5 @@
 import React from "react";
-import logo from "../logo.svg";
-
+import logo from "../pictures/icons/rathian.png";
 
 export class Monsterlist extends React.Component {
   constructor(props) {
@@ -30,12 +29,13 @@ export class Monsterlist extends React.Component {
 
 function Monster(props) {
   var monsterList = [];
+  
   for (var i = 0; i < props.monsters.length; i++) {
     if (props.monsters[i] !== "games" && props.monsters[i] !== "weakness"
     && props.monsters[i] !== "_id" ) {
       monsterList.push(
         <li className="monster">
-          <img className="list-icon" src={"../pictures/icons/" + props.monsters[i] + ".png" }/>
+          <img className="list-icon" src={logo}/>
           {props.monsters[i].charAt(0).toUpperCase() + props.monsters[i].slice(1)}
         </li>
       );
