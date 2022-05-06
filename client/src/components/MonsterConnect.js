@@ -42,7 +42,16 @@ export class MonsterConnect extends React.Component {
                 ) : (
                     <div className="row">
                         <div className="col-sm-3">
-                        <Monsterlist monsters={Object.keys(monsters_data)} />
+                        <div className="Monster-list card">
+                            <div className="card-body">
+                                <h2 className="List-title card-title">Monsters</h2>
+                                <div className="List">
+                                    <ul>
+                                    {monsterList}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                         <div className="col-9">
                         <MonsterInfo monster={ monsters_data["rathian"] } />

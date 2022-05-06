@@ -1,9 +1,6 @@
 import React from "react";
 
 export class Monsterlist extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const monsters = this.props.monsters;
