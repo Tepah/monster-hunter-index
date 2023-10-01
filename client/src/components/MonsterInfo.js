@@ -2,9 +2,6 @@ import React from "react";
 import logo from "../logo.svg";
 
 export class MonsterInfo extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const monster = this.props.monster
