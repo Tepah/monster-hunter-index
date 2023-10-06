@@ -1,22 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import { MonsterConnect } from "./components/MonsterConnect";
+import {MonsterContext} from "./components/MonsterContext";
 
 
 // Where the whole page renders
-class Page extends React.Component {
-  render() {
-    return (
+const App = () => {
+  const [currentMonster, setCurrentMonster] = useState("None");
+  return (
+    <MonsterContext.Provider value={{currentMonster, setCurrentMonster}}>
       <div className="full-page">
         <div className="Title-area">
           <h1>{this.props.name}</h1>
         </div>
         <Head />
-        <MonsterConnect />
+        <MonsterConnect  />
       </div>
-    );
-  }
+    </MonsterContext.Provider>
+  );
 }
 
 
@@ -25,9 +27,6 @@ class Head extends React.Component {
     return (
       <head>
         <title>Monster Hunter Index</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
-integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" 
-crossorigin="anonymous"></link>
       </head>
     )
   }
@@ -35,7 +34,7 @@ crossorigin="anonymous"></link>
 
 
 ReactDOM.render(
-  <Page name="Monster Hunter Index" />,
+  <App />,
   document.getElementById("root")
 )
 
