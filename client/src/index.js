@@ -6,13 +6,13 @@ import {MonsterContext} from "./components/MonsterContext";
 
 
 // Where the whole page renders
-const App = () => {
+const App = (props) => {
   const [currentMonster, setCurrentMonster] = useState("None");
   return (
     <MonsterContext.Provider value={{currentMonster, setCurrentMonster}}>
       <div className="full-page">
         <div className="Title-area">
-          <h1>{this.props.name}</h1>
+          <h1>{props.name}</h1>
         </div>
         <Head />
         <MonsterConnect  />

@@ -10,12 +10,14 @@ const Monster = require('../../models/Monster');
 router.get('/test', (req, res) => res.send('Monster route test'));
 
 // @route GET api/monsters
-// @description Get all monsters
+// @description Get all monster names
 // @access Public
-router.get('/', (req, res) => {
-    Monster.find()
-        .then(monsters => res.json(monsters))
-        .catch(err => res.status(404).json({ nomonsterfound: "No Monsters found" }));
+router.get('/', async (req, res) => {
+    try {
+        const items = await Monster.find({}, 'name');
+        const names = items.map(item => item.name);
+        res.json(names);
+    } catch(err) {res.status(404).json({ nomonsterfound: "No Monsters found" })}
 });
 
 // @route GET api/monsters/:id

@@ -1,8 +1,11 @@
 import React from "react";
 
-export const Monsterlist = () => {
-  let monsterList;
-  monsterList = <Monster monsters={monsters} />;
+export const Monsterlist = (props) => {
+  const monsterList = props.monstersData ;
+  console.log("MonsterList: ", monsterList);
+  const renderMonstersCards = monsterList.map((monster) => (
+    <MonsterCard monster={monster} />
+  ));
 
   return (
     <div className="Monster-list card">
@@ -10,7 +13,7 @@ export const Monsterlist = () => {
         <h2 className="List-title card-title">Monsters</h2>
         <div className="List">
           <ul>
-            {monsterList}
+            {renderMonstersCards}
           </ul>
         </div>
       </div>
@@ -18,7 +21,11 @@ export const Monsterlist = () => {
   );
 }
 
-function Monster(props) {
+const MonsterCard = (props) =>{
 
-  return monsterList;
+  return (
+    <li key={props.monster}>
+      <h1 className='text-xl font-bold'>{props.monster}</h1>
+    </li>
+  )
 }

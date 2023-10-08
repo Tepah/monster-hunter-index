@@ -1,4 +1,4 @@
 {
     "mongoURI":
-        "mongodb+srv://tepahtops:umofohacker@cluster0.c6qlo.mongodb.net/monsterIndex?retryWrites=true&w=majority"
+        "mongodb+srv://tepahtops:umofohacker@cluster0.c6qlo.mongodb.net/Monster-Data"
 }
