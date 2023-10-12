@@ -20,6 +20,17 @@ router.get('/', async (req, res) => {
     } catch(err) {res.status(404).json({ nomonsterfound: "No Monsters found" })}
 });
 
+// @route GET api/monsters/icons
+// @description Get all monster icons
+// @access Public
+router.get('/icons', async (req, res) => {
+    try {
+        const items = await Monster.find({}, 'icon');
+        const icons = items.map(item => item.icon);
+        res.json(icons);
+    } catch (err) {res.status(404).json({ nomonsterfound: "No Monsters found" })}
+})
+
 // @route GET api/monsters/:id
 // @description Get single monster by id
 // @access Public
