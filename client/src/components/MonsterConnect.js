@@ -9,7 +9,7 @@ export const MonsterConnect = () => {
       <div className="container basis-1/4">
         <Monsterlist />
       </div>
-      <div className="container basis-3/4">
+      <div className="container max-h-screen basis-3/4">
         <MonsterInfo />
       </div>
     </div>

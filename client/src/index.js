@@ -7,7 +7,15 @@ import {MonsterContext} from "./components/MonsterContext";
 
 // Where the whole page renders
 const App = (props) => {
-  const [currentMonster, setCurrentMonster] = useState("None");
+  const [currentMonster, setCurrentMonster] = useState({
+    name: 'None',
+    icon: null,
+    description: null,
+    species: null,
+    elements: [],
+    ailments: [],
+    resistances: [],
+  });
   return (
     <MonsterContext.Provider value={{currentMonster, setCurrentMonster}}>
       <div className="full-page">

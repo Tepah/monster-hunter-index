@@ -1,3 +1,5 @@
 import { createContext } from 'react';
 
-export const MonsterContext = createContext();
+
+
+export const MonsterContext = createContext(null);

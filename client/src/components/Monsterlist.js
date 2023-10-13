@@ -46,9 +46,9 @@ export const Monsterlist = (props) => {
   ));
 
   return (
-    <div className="flex flex-col overflow-x-scroll bg-amber-300 rounded-xl mt-12 shadow-black border-amber-950 border-2">
+    <div className="flex flex-col h-[75vh] overflow-x-hidden bg-amber-300 rounded-xl mt-12 shadow-black border-amber-950 border-2">
       <h2 className="pl-2 font-bold text-2xl">Monsters</h2>
-      <ul className="p-2 flex flex-col">
+      <ul className="p-2 flex flex-col max-w-screen-xl">
         {renderMonstersCards}
       </ul>
     </div>
@@ -59,12 +59,14 @@ const MonsterCard = (props) =>{
   let icon = props.icon;
   if (props.icon) {
     icon = props.icon.split('revision')[0];
+  } else {
+    icon = "https://static.wikia.nocookie.net/monsterhunter/images/6/67/MHRise_Item_Icon-Question_Mark_Red.svg/"
   }
   return (
-    <li className={''} key={props.monster}>
+    <li className={'my-1'} key={props.monster}>
       <button className={'flex items-center'}>
-        <img className={'flex-none w-16'} src={icon} alt={props.monster} loading={'lazy'} />
-        <h1 className='flex-none  text-xl font-bold text-center content-center'>{props.monster}</h1>
+        <img className={'flex-none w-14 border-2 border-black p-2.5'} src={icon} alt={props.monster} loading={'lazy'} />
+        <h1 className='flex-none w-44 min-w-30 text-xl font-bold text-center content-center'>{props.monster}</h1>
       </button>
     </li>
   )
