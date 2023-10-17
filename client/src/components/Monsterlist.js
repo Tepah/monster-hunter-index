@@ -37,14 +37,13 @@ export const Monsterlist = (props) => {
     }
   }, [monstersData, monsterIcons]);
 
-  // TODO: uncomment later
   if (loading) {
     console.log("Loading...")
     return <div>Loading...</div>
   }
 
   const renderMonstersCards = monstersData.map((monster, index) => (
-    <MonsterCard monster={monster} icon={monsterIcons[index]} />
+    <MonsterCard key={index} monster={monster} icon={monsterIcons[index]} />
   ));
 
   return (

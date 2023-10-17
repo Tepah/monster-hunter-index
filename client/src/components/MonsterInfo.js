@@ -49,6 +49,7 @@ export const MonsterInfo = () => {
             </div>
             <ShowElements elements={currentMonster.elements} />
             <ShowType type={currentMonster.type} />
+            <ShowWeaknesses weaknesses={currentMonster.weakness} />
           </div>
         </div>
         <div className="flex flex-row ">
@@ -58,6 +59,36 @@ export const MonsterInfo = () => {
           </div>
         </div>
         <ShowEffective effectiveness={currentMonster.effectiveness} />
+      </div>
+    </div>
+  )
+}
+
+const ShowWeaknesses = (props) => {
+  if (props.weaknesses === null || props.weaknesses[0] === 'None') {
+    return
+  }
+  return (
+    <div className='flex flex-col'>
+      <h3 className='flex-row font-bold text-2xl'>Weaknesses: </h3>
+      <div className='flex flex-row'>
+        {props.weaknesses.map((element) => {
+          switch (element) {
+            case 'Fire':
+              return (<img className={'flex-col w-10'} src={fire} alt={'Fire'}/>)
+            case 'Ice':
+              return (<img className={'flex-col w-10'} src={ice} alt={'Ice'}/>)
+            case 'Poison':
+              return (<img className={'flex-col w-10'} src={poison} alt={'Poison'}/>)
+            case 'Thunder':
+              return (<img className={'flex-col w-10'} src={thunder} alt={'Thunder'}/>)
+            case 'Water':
+              return (<img className={'flex-col w-10'} src={water} alt={'Water'}/>)
+            case 'Earth':
+              return (<img className={'flex-col w-10'} src={earth} alt={'Earth'}/>)
+            case 'Dragon':
+              return (<img className={'flex-col w-10'} src={dragon} alt={'Dragon'}/>)
+          }})}
       </div>
     </div>
   )
@@ -113,16 +144,16 @@ const ShowEffective = (props) => {
       <table>
         <thead>
           <tr>
-            <th><img src={fire} alt={'Fire'}/></th>
-            <th><img src={poison} alt={'Poison'}/></th>
-            <th><img src={water} alt={'Water'}/></th>
-            <th><img src={sleep} alt={'Sleep'}/></th>
-            <th><img src={thunder} alt={'Thunder'}/></th>
-            <th><img src={paralysis} alt={'Paralysis'}/></th>
-            <th><img src={ice} alt={'Ice'}/></th>
-            <th><img src={explosive} alt={'Blast'}/></th>
-            <th><img src={dragon} alt={'Dragon'}/></th>
-            <th><img src={stun} alt={'Stun'}/></th>
+            <th className='p-1'><img className='w-44' src={fire} alt={'Fire'}/></th>
+            <th className='p-1'><img className='w-44' src={poison} alt={'Poison'}/></th>
+            <th className='p-1'><img className='w-44' src={water} alt={'Water'}/></th>
+            <th className='p-1'><img className='w-44' src={sleep} alt={'Sleep'}/></th>
+            <th className='p-1'><img className='w-44' src={thunder} alt={'Thunder'}/></th>
+            <th className='p-1'><img className='w-44' src={paralysis} alt={'Paralysis'}/></th>
+            <th className='p-1'><img className='w-44' src={ice} alt={'Ice'}/></th>
+            <th className='p-1'><img className='w-44' src={explosive} alt={'Blast'}/></th>
+            <th className='p-1'><img className='w-44' src={dragon} alt={'Dragon'}/></th>
+            <th className='p-1'><img className='w-44' src={stun} alt={'Stun'}/></th>
           </tr>
         </thead>
         <tr>
@@ -141,3 +172,4 @@ const ShowEffective = (props) => {
     </div>
   )
 }
+
