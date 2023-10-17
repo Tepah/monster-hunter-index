@@ -1,5 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import axios from "axios";
+import {MonsterContext} from "./MonsterContext";
+import {getMonsterData} from "./MonsterConnect";
 
 export const Monsterlist = (props) => {
   const [monstersData, setMonstersData] = useState([]);
@@ -46,7 +48,8 @@ export const Monsterlist = (props) => {
   ));
 
   return (
-    <div className="flex flex-col h-[75vh] overflow-x-hidden bg-amber-300 rounded-xl mt-12 shadow-black border-amber-950 border-2">
+    <div className="flex flex-col h-[50vh] overflow-x-hidden bg-amber-300 rounded-xl mt-12 shadow-black border-amber-950
+    border-2 p-2">
       <h2 className="pl-2 font-bold text-2xl">Monsters</h2>
       <ul className="p-2 flex flex-col max-w-screen-xl">
         {renderMonstersCards}
@@ -56,6 +59,16 @@ export const Monsterlist = (props) => {
 }
 
 const MonsterCard = (props) =>{
+  const {setCurrentMonster} = useContext(MonsterContext);
+  const [change, setChange] = useState('');
+
+  useEffect(() => {
+    if (change !== '') {
+      console.log("Change: ", change)
+      getMonsterData(setCurrentMonster, change);
+    }
+  }, [change])
+
   let icon = props.icon;
   if (props.icon) {
     icon = props.icon.split('revision')[0];
@@ -64,7 +77,7 @@ const MonsterCard = (props) =>{
   }
   return (
     <li className={'my-1'} key={props.monster}>
-      <button className={'flex items-center'}>
+      <button className={'flex items-center'} onClick={() => setChange(props.monster)}>
         <img className={'flex-none w-14 border-2 border-black p-2.5'} src={icon} alt={props.monster} loading={'lazy'} />
         <h1 className='flex-none w-44 min-w-30 text-xl font-bold text-center content-center'>{props.monster}</h1>
       </button>

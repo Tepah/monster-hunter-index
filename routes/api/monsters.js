@@ -31,11 +31,11 @@ router.get('/icons', async (req, res) => {
     } catch (err) {res.status(404).json({ nomonsterfound: "No Monsters found" })}
 })
 
-// @route GET api/monsters/:id
-// @description Get single monster by id
+// @route GET api/monsters/:name
+// @description Get single monster by name
 // @access Public
-router.get('/:id', (req, res) => {
-    Monster.findById(req.params.id)
+router.get('/name/:name', (req, res) => {
+    Monster.findOne({name: req.params.name.replace('_', ' ')})
         .then(monster => res.json(monster))
         .catch(err => res.status(404).json({ nomonsterfound: 'No Monsters found' }));
 });

@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import { MonsterInfo } from "./MonsterInfo";
 import { Monsterlist } from "./Monsterlist";
+import axios from "axios";
 
 export const MonsterConnect = () => {
 
@@ -14,4 +15,14 @@ export const MonsterConnect = () => {
       </div>
     </div>
   )
+};
+
+export const getMonsterData = async (setMonsterData, monsterName) => {
+  try {
+    const dataRef = await axios.get('http://localhost:8082/api/monsters/name/' + monsterName.replace(' ', '_'));
+    console.log("DataRef: ", dataRef);
+    setMonsterData(dataRef.data);
+  } catch (err) {
+    console.log(err);
+  }
 };
